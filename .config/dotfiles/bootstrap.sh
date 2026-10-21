@@ -7,7 +7,7 @@
 # Environment: DOTFILES_REPO (clone URL), DOTFILES_BRANCH (default main)
 set -euo pipefail
 
-REPO="${DOTFILES_REPO:-https://github.com/funkyfundev/dotfiles.git}"
+REPO="${DOTFILES_REPO:-https://github.com/funkyfundev/dotfiles-intel.git}"
 BRANCH="${DOTFILES_BRANCH:-main}"
 GIT_DIR="$HOME/.dotfiles"
 BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
