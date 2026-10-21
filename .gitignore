@@ -1,0 +1,3 @@
+# Ignore everything by default. Track a file on purpose with:  dot add -f <file>
+*
+!.gitignore
