@@ -1,0 +1,4 @@
+# Machine-specific git settings. This file is NOT tracked by git.
+# [user]
+#     name = Your Name
+#     email = you@example.com

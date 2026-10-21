@@ -1,0 +1,28 @@
+# Development tools. Install: brew bundle --file=Brewfile.dev
+# Intel Macs: tools marked "unless intel" come from mise instead (prebuilt binaries,
+# see ~/.config/mise/config.intel.toml), because Homebrew builds Intel packages from source.
+intel = ENV["DOTFILES_ARCH"] == "x86_64"
+
+brew "neovim" unless intel
+brew "lazygit" unless intel
+brew "lazydocker" unless intel
+brew "git-delta" unless intel
+brew "shellcheck" unless intel
+brew "shfmt" unless intel
+brew "pre-commit"
+brew "gitleaks" unless intel
+brew "httpie"
+brew "sqlite"
+
+cask "visual-studio-code" unless File.exist?("/Applications/Visual Studio Code.app")
+cask "sublime-text" unless File.exist?("/Applications/Sublime Text.app")
+# Docker Desktop: free tier, personal use. The Homebrew cask was renamed from "docker".
+# Docker Desktop needs macOS 14 or newer. Older Intel Macs get Colima (a free Docker runtime) instead.
+macos_major = `sw_vers -productVersion 2>/dev/null`.to_i
+if macos_major >= 14
+  cask "docker-desktop" unless File.exist?("/Applications/Docker.app")
+else
+  brew "colima"
+  brew "docker"
+  brew "docker-compose"
+end

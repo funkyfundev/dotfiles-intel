@@ -1,0 +1,5 @@
+# Machine-specific settings. This file is NOT tracked by git.
+PROFILE=
+MAIN_EDITOR=code
+PROMPT_STYLE=nerd
+USE_1PASSWORD_SSH_AGENT=0

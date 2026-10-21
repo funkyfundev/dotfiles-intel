@@ -1,0 +1,5 @@
+# antidote plugin list (loaded after compinit; syntax highlighting must stay last)
+Aloxaf/fzf-tab
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting

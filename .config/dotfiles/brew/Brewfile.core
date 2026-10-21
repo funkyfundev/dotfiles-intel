@@ -1,0 +1,34 @@
+# Core tools and apps for every Mac. Install: brew bundle --file=Brewfile.core
+# Intel Macs: tools marked "unless intel" come from mise instead (prebuilt binaries,
+# see ~/.config/mise/config.intel.toml), because Homebrew builds Intel packages from source.
+intel = ENV["DOTFILES_ARCH"] == "x86_64"
+
+# --- CLI ---
+brew "git"
+brew "gh"
+brew "starship" unless intel
+brew "antidote"
+brew "mise"
+brew "pipx"
+brew "fzf" unless intel
+brew "ripgrep" unless intel
+brew "fd" unless intel
+brew "bat" unless intel
+brew "vivid" unless intel
+brew "eza"
+brew "zoxide" unless intel
+brew "jq" unless intel
+brew "yq" unless intel
+brew "tree"
+brew "wget"
+brew "tldr"
+brew "yazi" unless intel
+brew "trash"
+brew "dockutil"
+brew "mas"
+
+# --- Apps (skipped when already present, e.g. pushed by device management) ---
+cask "iterm2" unless File.exist?("/Applications/iTerm.app")
+cask "font-jetbrains-mono-nerd-font"
+cask "1password" unless File.exist?("/Applications/1Password.app")
+cask "1password-cli"

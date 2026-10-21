@@ -1,0 +1,25 @@
+# One extension ID per line. Lines starting with # are ignored.
+# Add an ID, then run: install.sh --only 55
+
+# --- Requested ---
+anthropic.claude-code
+GitHub.copilot
+GitHub.copilot-chat
+hashicorp.terraform
+# Check this ID in the marketplace: the published one may be mblode.twig-language-2
+mblode.twig-language
+alexkrechik.cucumberautocomplete
+alefragnani.project-manager
+vscode-icons-team.vscode-icons
+
+# --- Theme (Tokyo Night, matches iTerm2 and the prompt) ---
+enkia.tokyo-night
+
+# --- Suggested (uncomment to install) ---
+# ms-azuretools.vscode-docker
+# ms-vscode.PowerShell
+# ms-kubernetes-tools.vscode-kubernetes-tools
+# timonwong.shellcheck
+# editorconfig.editorconfig
+# eamodio.gitlens
+# asvetliakov.vscode-neovim

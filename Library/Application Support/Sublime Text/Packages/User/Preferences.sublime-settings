@@ -1,0 +1,14 @@
+{
+  "font_face": "JetBrainsMono Nerd Font",
+  "font_size": 13,
+  "theme": "Default Dark.sublime-theme",
+  "color_scheme": "Mariana.sublime-color-scheme",
+  "translate_tabs_to_spaces": true,
+  "tab_size": 2,
+  "trim_trailing_white_space_on_save": "all",
+  "ensure_newline_at_eof_on_save": true,
+  "hot_exit": "disabled",
+  "remember_open_files": false,
+  "show_encoding": true,
+  "ignored_packages": ["Vintage"]
+}

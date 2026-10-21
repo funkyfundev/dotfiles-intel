@@ -1,0 +1,4 @@
+# Machine-specific SSH hosts. This file is NOT tracked by git.
+# Host internal-server
+#     HostName 10.0.0.10
+#     User admin

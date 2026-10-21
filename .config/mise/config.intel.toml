@@ -1,0 +1,24 @@
+# Extra tools for Intel Macs only (loaded when MISE_ENV=intel, which the dotfiles set automatically).
+# Homebrew builds Intel packages from source (Tier 3), so these come as prebuilt binaries instead.
+# The matching `brew` lines in the Brewfiles are skipped on Intel.
+[tools]
+starship = "latest"
+fzf = "latest"
+ripgrep = "latest"
+fd = "latest"
+bat = "latest"
+vivid = "latest"
+zoxide = "latest"
+jq = "latest"
+yq = "latest"
+yazi = "latest"
+neovim = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+delta = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+gitleaks = "latest"
+kubectl = "latest"
+helm = "latest"
+k9s = "latest"

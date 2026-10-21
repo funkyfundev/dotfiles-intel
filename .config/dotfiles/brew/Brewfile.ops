@@ -1,0 +1,22 @@
+# IT / sysadmin / Azure tools. Install: brew bundle --file=Brewfile.ops
+# Intel Macs: tools marked "unless intel" come from mise instead (prebuilt binaries,
+# see ~/.config/mise/config.intel.toml), because Homebrew builds Intel packages from source.
+intel = ENV["DOTFILES_ARCH"] == "x86_64"
+
+# Azure CLI is NOT here: it is pinned to AZ_CLI_VERSION (versions.env) and installed with pipx by script 50.
+# Terraform comes from mise (~/.config/mise/config.toml).
+# PowerShell: the Homebrew cask is disabled, install it from https://github.com/PowerShell/PowerShell/releases
+
+brew "kubectl" unless intel
+brew "helm" unless intel
+brew "k9s" unless intel
+brew "kubelogin"
+brew "azcopy"
+brew "ansible"
+brew "nmap"
+brew "mtr"
+brew "ipcalc"
+brew "wireguard-tools"
+
+cask "wireshark-app" unless File.exist?("/Applications/Wireshark.app")
+cask "windows-app" unless File.exist?("/Applications/Windows App.app")

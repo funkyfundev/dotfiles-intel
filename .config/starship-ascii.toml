@@ -1,0 +1,105 @@
+# Starship prompt: dark (Tokyo Night palette), plain ASCII (no icons).
+# Used when PROMPT_STYLE=ascii or TERM=linux. Switch with: prompt-style ascii|nerd
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = "tokyonight"
+add_newline = false
+format = "$hostname$directory$git_branch$git_status$nodejs$python$golang$java$terraform$docker_context$azure$kubernetes$cmd_duration$status$jobs$line_break$character"
+
+[palettes.tokyonight]
+text = "#c0caf5"
+blue = "#7aa2f7"
+purple = "#bb9af7"
+green = "#9ece6a"
+yellow = "#e0af68"
+orange = "#ff9e64"
+red = "#f7768e"
+cyan = "#7dcfff"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
+
+[hostname]
+ssh_only = true
+format = "[$hostname]($style) "
+style = "bold orange"
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+read_only = " (ro)"
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold blue"
+read_only_style = "red"
+
+[git_branch]
+symbol = ""
+format = "on [$branch(:$remote_branch)]($style) "
+style = "bold purple"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold yellow"
+ahead = "^"
+behind = "v"
+diverged = "^v"
+
+[nodejs]
+symbol = ""
+format = "via [node $version]($style) "
+style = "green"
+
+[python]
+symbol = ""
+format = 'via [py ${version}(\($virtualenv\))]($style) '
+style = "yellow"
+
+[golang]
+symbol = ""
+format = "via [go $version]($style) "
+style = "cyan"
+
+[java]
+symbol = ""
+format = "via [java $version]($style) "
+style = "orange"
+
+[terraform]
+symbol = ""
+format = "[tf:$workspace]($style) "
+style = "purple"
+
+[docker_context]
+symbol = ""
+format = "[docker:$context]($style) "
+style = "blue"
+
+[azure]
+disabled = false
+symbol = ""
+format = "[az:($subscription)]($style) "
+style = "blue"
+
+[kubernetes]
+disabled = false
+symbol = ""
+format = '[k8s:$context( \($namespace\))]($style) '
+style = "cyan"
+
+[cmd_duration]
+min_time = 3000
+format = "took [$duration]($style) "
+style = "orange"
+
+[status]
+disabled = false
+symbol = ""
+format = "[$symbol$status]($style) "
+style = "red"
+
+[jobs]
+symbol = ""
+number_threshold = 1
+format = "[jobs:$number]($style) "
+style = "purple"

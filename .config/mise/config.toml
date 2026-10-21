@@ -1,0 +1,10 @@
+# Language runtimes and tools, installed by: mise install
+[tools]
+node = "lts"
+python = "3.12"
+go = "latest"
+java = "temurin-21"
+terraform = "latest"
+
+[settings]
+experimental = false

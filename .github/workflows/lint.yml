@@ -1,0 +1,32 @@
+name: lint
+on: [push, pull_request]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: shellcheck
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
+          shellcheck -x -P SCRIPTDIR \
+            .config/dotfiles/*.sh .config/dotfiles/lib/*.sh .config/dotfiles/scripts/*.sh
+
+      - name: validate TOML, JSON and Brewfiles
+        run: |
+          python3 - <<'PY'
+          import json, tomllib, glob
+          for f in glob.glob(".config/**/*.toml", recursive=True):
+              tomllib.load(open(f, "rb")); print("toml ok", f)
+          for f in glob.glob("Library/**/*.json", recursive=True) + glob.glob("Library/**/*.sublime-settings", recursive=True):
+              json.load(open(f)); print("json ok", f)
+          PY
+          for f in .config/dotfiles/brew/Brewfile.*; do ruby -c "$f"; done
+
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
